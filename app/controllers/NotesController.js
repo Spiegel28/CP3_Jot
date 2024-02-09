@@ -1,5 +1,7 @@
 import { AppState } from "../AppState.js";
+import { Pop } from "../utils/Pop.js";
 import { setHTML } from "../utils/Writer.js";
+import { getFormData } from "../utils/FormHandler.js";
 
 
 
@@ -39,8 +41,14 @@ export class NotesController {
 
             console.log('here is your note object', noteFormData)
 
-            notesService.createNote(carFormData)
+            notesService.createNote(noteFormData)
 
+            // @ts-ignore
+            form.reset()
+
+        } catch (error) {
+            console.error(error);
+            Pop.error(error.message)
         }
     }
 }
