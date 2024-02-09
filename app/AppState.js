@@ -9,11 +9,11 @@ class ObservableAppState extends EventEmitter {
 
   noteFiles = [
     new NoteFile({
-      title: 'Day 1',
+      name: 'Day 1',
       body: 'Today I learned all of this stuff and more'
     }),
     new NoteFile({
-      title: 'Day 2',
+      name: 'Day 2',
       body: 'Today was so much harder than day 1'
     })
   ]

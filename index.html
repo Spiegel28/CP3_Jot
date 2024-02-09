@@ -36,8 +36,29 @@
 
   <!-- SECTION -->
   <main>
-    <div class="d-flex height-100" id = "app">
-      <!-- <div class="notes__sidebar">
+    <div class="container-fluid">
+      <div class="row my-3">
+        <div class="col-12 m-auto">
+          <div class="shadow-lg">
+            <form onsubmit="app.NotesController.createNote()">
+              <div class="mb-3">
+                <label for="noteTitle">Title</label>
+                <input id="noteTitle" name = "title" type="text">
+              </div>
+              <div class="mb-3">
+                <label for="noteBody">Body</label>
+                <input id="noteBody" name = "body" type="text">
+              </div>
+              <div class="text-end mb-3">
+                <button type = "submit">Add Note</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    <section class></section>
+    <div class="d-flex height-100" id = "noteFileList">
+      <!-- <div class="">
         <button class = "notes__list" type="button">Add Note</button>
           <div class="">
             <div class="fs-1">Lecture Notes</div>
@@ -46,6 +67,7 @@
           </div>
       </div> -->
     </div>
+  </div>
 
 
 
