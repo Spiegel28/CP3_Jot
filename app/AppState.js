@@ -18,7 +18,7 @@ class ObservableAppState extends EventEmitter {
     })
   ]
 
-  activeCaseFile = null
+  activeNoteFile = null
   
 }
 

@@ -18,13 +18,12 @@ function _drawNotes() {
     setHTML('noteFileList', htmlString)
 }
 
-// function _drawActiveNote() {
-//     const noteFile = AppState.activeNoteFile
-//     console.log('drawing active note', noteFile)
+function _drawActiveNote() {
+    const noteFile = AppState.activeNoteFile
+    console.log('drawing active note', noteFile)
 
-//     setHTML('caseFileDetails', caseFile.ActiveFileHTMLTemplate)
-
-// }
+    setHTML('noteFileDetails', noteFile.ActiveNoteListHTML)
+}
 
 export class NotesController {
     constructor() {
@@ -36,6 +35,11 @@ export class NotesController {
 
         AppState.on('notes', _drawNotes)
     }
+
+    // setActiveNoteFile(noteFileId) {
+        // console.log('setting active case file, here is the id', caseFileId);
+    //     notesService.setActiveNoteFile(noteFileId)
+    //   }
 
     createNote() {
         try{
