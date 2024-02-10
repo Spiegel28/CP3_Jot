@@ -17,6 +17,8 @@ class ObservableAppState extends EventEmitter {
       body: 'Today was so much harder than day 1'
     })
   ]
+
+  activeCaseFile = null
   
 }
 

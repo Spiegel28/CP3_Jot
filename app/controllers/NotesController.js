@@ -2,6 +2,7 @@ import { AppState } from "../AppState.js";
 import { Pop } from "../utils/Pop.js";
 import { setHTML } from "../utils/Writer.js";
 import { getFormData } from "../utils/FormHandler.js";
+import { notesService } from "../services/notesService.js";
 
 
 
@@ -16,6 +17,14 @@ function _drawNotes() {
 
     setHTML('noteFileList', htmlString)
 }
+
+// function _drawActiveNote() {
+//     const noteFile = AppState.activeNoteFile
+//     console.log('drawing active note', noteFile)
+
+//     setHTML('caseFileDetails', caseFile.ActiveFileHTMLTemplate)
+
+// }
 
 export class NotesController {
     constructor() {
@@ -33,7 +42,7 @@ export class NotesController {
             event.preventDefault()
             console.log('creating note');
 
-            const form =event.target
+            const form = event.target
 
             console.log('targeted event', form);
 
