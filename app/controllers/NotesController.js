@@ -33,13 +33,9 @@ export class NotesController {
 
         _drawNotes()
 
-        AppState.on('notes', _drawNotes)
+        AppState.on('noteFiles', _drawNotes)
+        AppState.on('activeNoteFiles', _drawActiveNote)
     }
-
-    // setActiveNoteFile(noteFileId) {
-        // console.log('setting active case file, here is the id', caseFileId);
-    //     notesService.setActiveNoteFile(noteFileId)
-    //   }
 
     createNote() {
         try{

@@ -1,11 +1,19 @@
 import { AppState } from "../AppState.js";
 import { NoteFile } from "../models/NoteFile.js";
-import { saveState } from "../utils/Store.js";
+import { loadState, saveState } from "../utils/Store.js";
 
 // function _saveNotesInLocalStorage() {
 //     saveState('notes', AppState.noteFiles)  will use later 
 // }
 
+// function _saveCaseFiles () {
+//     saveState('noteFiles', AppState.noteFiles)
+// }
+
+// function _loadNoteFiles() {
+//     const noteFilesFromLocalStorage = loadState('noteFiles', [NoteFile])
+//     AppState.noteFiles = noteFilesFromLocalStorage
+// }
 
 class NotesService {
 

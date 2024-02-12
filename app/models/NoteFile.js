@@ -12,7 +12,7 @@ export class NoteFile {
     get NoteListHTML() {
         return `
           <div class = "d-flex p-3">
-            <p onclick="app.NotesController.setActiveNoteFile('${this.id}')" class="fs-1">${this.name}</p>
+            <p onclick="app.NotesController.setActiveNoteFile('${this.id}')" class="fs-1 selectable" role = "button">${this.name}</p>
           </div>
       </div>
         `
@@ -22,13 +22,13 @@ export class NoteFile {
         return `
       <div class="p-5">
         <div class="d-flex">
-          <h2 class=" me-4">Title </h2>
+          <h2 class=" me-4"> ${this.name} </h2>
         </div>
         <div class="d-flex justify-content-between mb-4 align-items-center">
           <h3 class="mb-0">Time</h3>
         </div>
         <p class="fs-5">
-        Bunch of words for body 
+        ${this.body}
         </p>
       </div>
         `
