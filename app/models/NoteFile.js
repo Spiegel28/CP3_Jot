@@ -7,6 +7,7 @@ export class NoteFile {
         this.name = data.name
         this.body = data.body
         this.lastAccessed = new Date()
+        this.isActive = false 
     }
 
     get NoteListHTML() {
@@ -32,5 +33,9 @@ export class NoteFile {
         </p>
       </div>
         `
+    }
+
+    getNoteBody() {
+        if(this.id)
     }
 }

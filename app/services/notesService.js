@@ -2,11 +2,8 @@ import { AppState } from "../AppState.js";
 import { NoteFile } from "../models/NoteFile.js";
 import { loadState, saveState } from "../utils/Store.js";
 
-// function _saveNotesInLocalStorage() {
-//     saveState('notes', AppState.noteFiles)  will use later 
-// }
 
-// function _saveCaseFiles () {
+// function _saveNoteFiles () {
 //     saveState('noteFiles', AppState.noteFiles)
 // }
 
@@ -16,6 +13,10 @@ import { loadState, saveState } from "../utils/Store.js";
 // }
 
 class NotesService {
+
+    constructor() {
+        // _loadNoteFiles() 
+    }
 
     createNote(noteFormData) {
 
@@ -27,7 +28,7 @@ class NotesService {
 
         AppState.noteFiles.push(newNote)
 
-        // _saveNotesInLocalStorage() will add this later 
+        // _saveNoteFile() will add this later 
 
 
     }

@@ -42,12 +42,16 @@
           <div class="shadow-lg">
             <form onsubmit="app.NotesController.createNote()">
               <div class="mb-3">
-                <label for="noteTitle">Title</label>
-                <input id="noteTitle" name = "title" type="text">
+                <label for="name">Title</label>
+                <input id="name" name = "name" type="text" required minlength="3" maxlength="15">
               </div>
               <div class="mb-3">
-                <label for="noteBody">Body</label>
-                <input id="noteBody" name = "body" type="text">
+                <label for="body">Body</label>
+                <input id="body" name = "body" type="text">
+              </div>
+              <div class="mb-3">
+                <label for="color">Color</label>
+                <input id="color" name = "color" type="color" value="#ff0000">
               </div>
               <div class="text-end mb-3">
                 <button type = "submit">Add Note</button>

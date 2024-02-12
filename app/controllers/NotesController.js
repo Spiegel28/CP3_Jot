@@ -40,6 +40,7 @@ export class NotesController {
     createNote() {
         try{
             event.preventDefault()
+
             console.log('creating note');
 
             const form = event.target
@@ -63,5 +64,6 @@ export class NotesController {
 
     setActiveNoteFile(noteFileId) {
         notesService.setActiveNoteFile(noteFileId)
+        
     }
 }
