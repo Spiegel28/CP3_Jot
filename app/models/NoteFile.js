@@ -8,7 +8,6 @@ export class NoteFile {
         this.name = data.name
         this.body = data.body
 
-        // TODO make sure you assign a color here
         this.color = data.color
         // FIXME in order for these to persist using local storage, your dates will have to be updated. Reference Grgeslist and Redacted
         this.createdAt = data.createdAt == undefined ? new Date() : new Date(data.createdAt)
@@ -39,10 +38,12 @@ export class NoteFile {
           <h2 class=" me-4"> ${this.name} </h2>
         </div>
         <div class=" justify-content-between mb-4 align-items-center">
+         
+          <p class="mb-0">${this.id.length}</p>
           <p class="mb-0">${this.getCreatedAtString()}</p>
           <p>${this.getUpdatedAtString()}</p>
         </div>
-        <textarea id="noteBody" class="fs-5" style = "background-color: ${this.color};">${this.body}</textarea>
+        <textarea style = "height: 200px;" id="noteBody" class="form-control fs-5" style = "background-color: ${this.color};">${this.body}</textarea>
         <button onclick="app.NotesController.deleteNote('${this.id}')" class="btn btn-danger ms-auto">Delete</button>
       </div>
         `

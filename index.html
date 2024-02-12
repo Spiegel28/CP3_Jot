@@ -39,15 +39,15 @@
     <div class="container-fluid">
       <div class="row my-3">
         <div class="col-12 m-auto">
-          <div class="shadow-lg">
+          <div class="shadow-lg form">
             <form onsubmit="app.NotesController.createNote()">
-              <div class="mb-3">
+              <div class="mb-3" >
                 <label for="name">Title</label>
-                <input id="name" name = "name" type="text" required minlength="3" maxlength="15">
+                <input id="name" class="form-control form-control-lg" name = "name" type="text" required minlength="3" maxlength="15">
               </div>
               <div class="mb-3">
-                <label for="body">Body</label>
-                <input id="body" name = "body" type="text">
+                <label for="body" class = 'form-label'>Body</label>
+                <textarea id="body" class="form-control form-control-lg" name = "body" rows ="5" type="text"> </textarea>
               </div>
               <div class="mb-3">
                 <label for="color">Color</label>
