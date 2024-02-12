@@ -9,7 +9,6 @@ export class NoteFile {
         this.body = data.body
         this.createdAt = new Date()
         this.updatedAt = new Date()
-        this.isActive = false 
     }
 
     
@@ -47,7 +46,5 @@ export class NoteFile {
         return `Updated at: ${this.updatedAt.toLocaleString()}`;
     }
 
-    // getNoteBody() {
-    //     if(this.id)
-    // }
+
 }

@@ -33,7 +33,7 @@ export class NotesController {
 
         _drawNotes()
 
-        AppState.on('noteFile', _drawNotes)
+        AppState.on('noteFiles', _drawNotes)
         AppState.on('activeNoteFile', _drawActiveNote)
     }
 
@@ -69,21 +69,21 @@ export class NotesController {
         
     }
 
-    updateNoteFile() {
-        console.log('blurred input');
+    // updateNoteFile() {
+    //     console.log('blurred input');
     
-        const textAreaElement = document.getElementById('noteFileTextArea')
+    //     const textAreaElement = document.getElementById('noteFileTextArea')
     
-        // @ts-ignore
-        console.log('text content from textarea', textAreaElement.value);
+    //     // @ts-ignore
+    //     console.log('text content from textarea', textAreaElement.value);
     
-        // NOTE pulls out the text content currently stored in the textarea tag
-        // @ts-ignore
-        const updatedNoteFileBody = textAreaElement.value
+    //     // NOTE pulls out the text content currently stored in the textarea tag
+    //     // @ts-ignore
+    //     const updatedNoteFileBody = textAreaElement.value
     
-        notesService.updateNoteFile(updatedNoteFileBody)
+    //     notesService.updateNoteFile(updatedNoteFileBody)
     
-      }
+    //   }
 
     deleteNote(noteId) {
         const confirmed = confirm('Are you sure you want to delete this note?');
