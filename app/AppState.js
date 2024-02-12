@@ -20,6 +20,10 @@ class ObservableAppState extends EventEmitter {
 
   activeNoteFile = null
   
+ 
+
 }
+
+
 
 export const AppState = createObservableProxy(new ObservableAppState())

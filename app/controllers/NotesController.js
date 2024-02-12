@@ -33,8 +33,8 @@ export class NotesController {
 
         _drawNotes()
 
-        AppState.on('noteFiles', _drawNotes)
-        AppState.on('activeNoteFiles', _drawActiveNote)
+        AppState.on('noteFile', _drawNotes)
+        AppState.on('activeNoteFile', _drawActiveNote)
     }
 
     createNote() {
@@ -56,6 +56,8 @@ export class NotesController {
             // @ts-ignore
             form.reset()
 
+
+
         } catch (error) {
             console.error(error);
             Pop.error(error.message)
@@ -65,5 +67,16 @@ export class NotesController {
     setActiveNoteFile(noteFileId) {
         notesService.setActiveNoteFile(noteFileId)
         
+    }
+
+    deleteNote(noteId) {
+        const confirmed = confirm('Are you sure you want to delete this note?');
+        if (confirmed) {
+            const index = AppState.noteFiles.findIndex(note => note.id === noteId);
+            if (index !== -1) {
+                AppState.noteFiles.splice(index, 1);
+                _drawNotes();
+            }
+        }
     }
 }

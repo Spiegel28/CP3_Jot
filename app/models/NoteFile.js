@@ -4,11 +4,14 @@ import { generateId } from "../utils/GenerateId.js";
 export class NoteFile {
     constructor (data) {
         this.id = generateId()
+        console.log('Generated Id', this.id)
         this.name = data.name
         this.body = data.body
         this.lastAccessed = new Date()
         this.isActive = false 
     }
+
+    
 
     get NoteListHTML() {
         return `
@@ -28,14 +31,13 @@ export class NoteFile {
         <div class="d-flex justify-content-between mb-4 align-items-center">
           <h3 class="mb-0">Time</h3>
         </div>
-        <p class="fs-5">
-        ${this.body}
-        </p>
+        <textarea id="noteBody" class="fs-5">${this.body}</textarea>
+        <button onclick="app.NotesController.deleteNote('${this.id}')" class="btn btn-danger ms-auto">Delete</button>
       </div>
         `
     }
 
-    getNoteBody() {
-        if(this.id)
-    }
+    // getNoteBody() {
+    //     if(this.id)
+    // }
 }

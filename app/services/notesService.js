@@ -34,7 +34,7 @@ class NotesService {
     }
 
     setActiveNoteFile(noteFileId){
-        const foundNote = AppState.noteFiles.find(noteFile => noteFileId == noteFileId)
+        const foundNote = AppState.noteFiles.find(noteFile => noteFileId = noteFileId)
 
         console.log('setting active note')
 
