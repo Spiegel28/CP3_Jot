@@ -7,7 +7,8 @@ export class NoteFile {
         console.log('Generated Id', this.id)
         this.name = data.name
         this.body = data.body
-        this.lastAccessed = new Date()
+        this.createdAt = new Date()
+        this.updatedAt = new Date()
         this.isActive = false 
     }
 
@@ -28,13 +29,22 @@ export class NoteFile {
         <div class="d-flex">
           <h2 class=" me-4"> ${this.name} </h2>
         </div>
-        <div class="d-flex justify-content-between mb-4 align-items-center">
-          <h3 class="mb-0">Time</h3>
+        <div class=" justify-content-between mb-4 align-items-center">
+          <p class="mb-0">${this.getCreatedAtString()}</p>
+          <p>${this.getUpdatedAtString()}</p>
         </div>
         <textarea id="noteBody" class="fs-5">${this.body}</textarea>
         <button onclick="app.NotesController.deleteNote('${this.id}')" class="btn btn-danger ms-auto">Delete</button>
       </div>
         `
+    }
+
+    getCreatedAtString() {
+        return `Created at: ${this.createdAt.toLocaleString()}`;
+    }
+
+    getUpdatedAtString() {
+        return `Updated at: ${this.updatedAt.toLocaleString()}`;
     }
 
     // getNoteBody() {

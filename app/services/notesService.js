@@ -33,6 +33,19 @@ class NotesService {
 
     }
 
+    updateNoteFile(updatedNoteFileBody) {
+        const activeNoteFile = AppState.activeNoteFile
+    
+        // NOTE updates body
+        activeNoteFile.body = updatedNoteFileBody
+        // NOTE updates timestamp
+        activeNoteFile.updatedAt = new Date()
+    
+        // _saveNoteFiles()
+
+        AppState.emit('activeNoteFile')
+      }
+
     setActiveNoteFile(noteFileId){
         const foundNote = AppState.noteFiles.find(noteFile => noteFileId = noteFileId)
 

@@ -69,6 +69,22 @@ export class NotesController {
         
     }
 
+    updateNoteFile() {
+        console.log('blurred input');
+    
+        const textAreaElement = document.getElementById('noteFileTextArea')
+    
+        // @ts-ignore
+        console.log('text content from textarea', textAreaElement.value);
+    
+        // NOTE pulls out the text content currently stored in the textarea tag
+        // @ts-ignore
+        const updatedNoteFileBody = textAreaElement.value
+    
+        notesService.updateNoteFile(updatedNoteFileBody)
+    
+      }
+
     deleteNote(noteId) {
         const confirmed = confirm('Are you sure you want to delete this note?');
         if (confirmed) {
