@@ -7,15 +7,19 @@ import { notesService } from "../services/notesService.js";
 
 
 function _drawNotes() {
-    console.log('drawing notes');
 
     const noteFiles = AppState.noteFiles
+
+    console.log('drawing notes', noteFiles);
+
 
     let htmlString = ''
 
     noteFiles.forEach(noteFile => htmlString += noteFile.NoteListHTML)
 
     setHTML('noteFileList', htmlString)
+
+    // TODO whenever you draw all notes, get the length of the notes array and put that somewhere on the page
 }
 
 function _drawActiveNote() {
@@ -69,21 +73,21 @@ export class NotesController {
         
     }
 
-    // updateNoteFile() {
-    //     console.log('blurred input');
+    updateNoteFile() {
+        console.log('blurred input');
     
-    //     const textAreaElement = document.getElementById('noteFileTextArea')
+        const textAreaElement = document.getElementById('noteFileTextArea')
     
-    //     // @ts-ignore
-    //     console.log('text content from textarea', textAreaElement.value);
+        // @ts-ignore
+        console.log('text content from textarea', textAreaElement.value);
     
-    //     // NOTE pulls out the text content currently stored in the textarea tag
-    //     // @ts-ignore
-    //     const updatedNoteFileBody = textAreaElement.value
+        // NOTE pulls out the text content currently stored in the textarea tag
+        // @ts-ignore
+        const updatedNoteFileBody = textAreaElement.value
     
-    //     notesService.updateNoteFile(updatedNoteFileBody)
+        notesService.updateNoteFile(updatedNoteFileBody)
     
-    //   }
+      }
 
     deleteNote(noteId) {
         const confirmed = confirm('Are you sure you want to delete this note?');

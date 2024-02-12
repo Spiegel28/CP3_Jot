@@ -3,18 +3,20 @@ import { NoteFile } from "../models/NoteFile.js";
 import { loadState, saveState } from "../utils/Store.js";
 
 
-// function _saveNoteFiles () {
-//     saveState('noteFiles', AppState.noteFiles)
-// }
+// TODO these look written correctly, make sure you are calling _saveNoteFiles at the correct time (create, update, delete)
+function _saveNoteFiles () {
+    saveState('noteFiles', AppState.noteFiles)
+}
 
-// function _loadNoteFiles() {
-//     const noteFilesFromLocalStorage = loadState('noteFiles', [NoteFile])
-//     AppState.noteFiles = noteFilesFromLocalStorage
-// }
+function _loadNoteFiles() {
+    const noteFilesFromLocalStorage = loadState('noteFiles', [NoteFile])
+    AppState.noteFiles = noteFilesFromLocalStorage
+}
 
 class NotesService {
 
     constructor() {
+        // TODO comment this back in when you can save noteFiles succesfully
         // _loadNoteFiles() 
     }
 
@@ -33,21 +35,22 @@ class NotesService {
 
     }
 
-    // updateNoteFile(updatedNoteFileBody) {
-    //     const activeNoteFile = AppState.activeNoteFile
+    updateNoteFile(updatedNoteFileBody) {
+        const activeNoteFile = AppState.activeNoteFile
     
-    //     // NOTE updates body
-    //     activeNoteFile.body = updatedNoteFileBody
-    //     // NOTE updates timestamp
-    //     activeNoteFile.updatedAt = new Date()
+        // NOTE updates body
+        activeNoteFile.body = updatedNoteFileBody
+        // NOTE updates timestamp
+        activeNoteFile.updatedAt = new Date()
     
-    //     // _saveNoteFiles()
+        // _saveNoteFiles()
 
-    //     AppState.emit('activeNoteFile')
-    //   }
+        AppState.emit('activeNoteFile')
+      }
 
     setActiveNoteFile(noteFileId){
-        const foundNote = AppState.noteFiles.find(noteFile => noteFileId === noteFileId)
+        console.log(noteFileId);
+        const foundNote = AppState.noteFiles.find(noteFile => noteFile.id == noteFileId)
 
         console.log('setting active note')
 

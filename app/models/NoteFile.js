@@ -7,8 +7,12 @@ export class NoteFile {
         console.log('Generated Id', this.id)
         this.name = data.name
         this.body = data.body
-        this.createdAt = new Date()
-        this.updatedAt = new Date()
+
+        // TODO make sure you assign a color here
+        this.color = data.color
+        // FIXME in order for these to persist using local storage, your dates will have to be updated. Reference Grgeslist and Redacted
+        this.createdAt = data.createdAt == undefined ? new Date() : new Date(data.createdAt)
+        this.updatedAt = data.updatedAt ? new Date(data.updatedAt) : new Date()
     }
 
     
@@ -23,6 +27,12 @@ export class NoteFile {
     }
 
     get ActiveNoteListHTML() {
+        // FIXME make textarea larger
+
+        // TODO after saving color to model, use that somewhere in your active template. (reference gregslist)
+
+        // TODO put onblur handler on text area, and call your updateNoteFile method here. Reference redacted updateCaseFile very heavily
+
         return `
       <div class="p-5">
         <div class="d-flex">
@@ -32,7 +42,7 @@ export class NoteFile {
           <p class="mb-0">${this.getCreatedAtString()}</p>
           <p>${this.getUpdatedAtString()}</p>
         </div>
-        <textarea id="noteBody" class="fs-5">${this.body}</textarea>
+        <textarea id="noteBody" class="fs-5" style = "background-color: ${this.color};">${this.body}</textarea>
         <button onclick="app.NotesController.deleteNote('${this.id}')" class="btn btn-danger ms-auto">Delete</button>
       </div>
         `
