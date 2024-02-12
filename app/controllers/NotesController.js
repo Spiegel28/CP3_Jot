@@ -76,7 +76,7 @@ export class NotesController {
     updateNoteFile() {
         console.log('blurred input');
     
-        const textAreaElement = document.getElementById('noteFileTextArea')
+        const textAreaElement = document.getElementById('noteBody')
     
         // @ts-ignore
         console.log('text content from textarea', textAreaElement.value);

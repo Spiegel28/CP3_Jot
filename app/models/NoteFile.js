@@ -43,7 +43,7 @@ export class NoteFile {
           <p class="mb-0">${this.getCreatedAtString()}</p>
           <p>${this.getUpdatedAtString()}</p>
         </div>
-        <textarea style = "height: 200px;" id="noteBody" class="form-control fs-5" style = "background-color: ${this.color};">${this.body}</textarea>
+        <textarea onblur="app.NotesController.updateNoteFile()" style = "height: 200px;" id="noteBody" class="form-control fs-5" style = "background-color: ${this.color};">${this.body}</textarea>
         <button onclick="app.NotesController.deleteNote('${this.id}')" class="btn btn-danger ms-auto">Delete</button>
       </div>
         `
@@ -57,5 +57,8 @@ export class NoteFile {
         return `Updated at: ${this.updatedAt.toLocaleString()}`;
     }
 
+    getNoteBody(){
+        
+    }
 
 }
