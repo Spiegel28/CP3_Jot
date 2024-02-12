@@ -64,4 +64,8 @@ export class NotesController {
             Pop.error(error.message)
         }
     }
+
+    setActiveNoteFile(noteFileId) {
+        notesService.setActiveNoteFile(noteFileId)
+    }
 }
