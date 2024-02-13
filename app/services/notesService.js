@@ -30,7 +30,7 @@ class NotesService {
 
         AppState.noteFiles.push(newNote)
 
-        // _saveNoteFile() will add this later 
+        _saveNoteFiles()
 
 
     }
@@ -43,9 +43,10 @@ class NotesService {
         // NOTE updates timestamp
         activeNoteFile.updatedAt = new Date()
     
-        // _saveNoteFiles()
 
         AppState.emit('activeNoteFile')
+        _saveNoteFiles()
+
       }
 
     setActiveNoteFile(noteFileId){
@@ -58,6 +59,8 @@ class NotesService {
 
         AppState.emit('activeNoteFile')
     }
+
+
 }
 
 export const notesService = new NotesService()

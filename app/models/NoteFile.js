@@ -1,3 +1,4 @@
+import { AppState } from "../AppState.js";
 import { generateId } from "../utils/GenerateId.js";
 
 
@@ -33,13 +34,13 @@ export class NoteFile {
         // TODO put onblur handler on text area, and call your updateNoteFile method here. Reference redacted updateCaseFile very heavily
 
         return `
-      <div class="p-5">
+      <div class="p-5 card">
         <div class="d-flex">
           <h2 class=" me-4"> ${this.name} </h2>
         </div>
         <div class=" justify-content-between mb-4 align-items-center">
          
-          <p class="mb-0">${this.id.length}</p>
+          <p class="mb-0">Notes Created: ${AppState.noteFiles.length}</p>
           <p class="mb-0">${this.getCreatedAtString()}</p>
           <p>${this.getUpdatedAtString()}</p>
         </div>
@@ -57,8 +58,5 @@ export class NoteFile {
         return `Updated at: ${this.updatedAt.toLocaleString()}`;
     }
 
-    getNoteBody(){
-        
-    }
-
+    
 }
