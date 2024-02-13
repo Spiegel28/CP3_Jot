@@ -4,14 +4,14 @@ import { loadState, saveState } from "../utils/Store.js";
 
 
 // TODO these look written correctly, make sure you are calling _saveNoteFiles at the correct time (create, update, delete)
-function _saveNoteFiles () {
-    saveState('noteFiles', AppState.noteFiles)
-}
+// function _saveNoteFiles () {
+//     saveState('noteFiles', AppState.noteFiles)
+// }
 
-function loadNoteFiles() {
-    const noteFilesFromLocalStorage = loadState('noteFiles', [NoteFile])
-    AppState.noteFiles = noteFilesFromLocalStorage
-}
+// function loadNoteFiles() {
+//     const noteFilesFromLocalStorage = loadState('noteFiles', [NoteFile])
+//     AppState.noteFiles = noteFilesFromLocalStorage
+// }
 
 class NotesService {
 
@@ -30,7 +30,7 @@ class NotesService {
 
         AppState.noteFiles.push(newNote)
 
-        _saveNoteFiles()
+        // _saveNoteFiles()
 
 
     }
@@ -45,7 +45,7 @@ class NotesService {
     
 
         AppState.emit('activeNoteFile')
-        _saveNoteFiles()
+        // _saveNoteFiles()
 
       }
 

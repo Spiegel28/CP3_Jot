@@ -33,7 +33,7 @@ export class NotesController {
     constructor() {
         console.log('Notes loaded')
 
-        notesService.LoadNoteFiles()
+        // notesService.LoadNoteFiles()
         _drawNotes()
 
         AppState.on('noteFiles', _drawNotes)
