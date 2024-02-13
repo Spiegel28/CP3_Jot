@@ -34,7 +34,7 @@ export class NoteFile {
         // TODO put onblur handler on text area, and call your updateNoteFile method here. Reference redacted updateCaseFile very heavily
 
         return `
-      <div class="p-5 card">
+      <div class="p-5 card background-color: ${this.color};">
         <div class="d-flex">
           <h2 class=" me-4"> ${this.name} </h2>
         </div>

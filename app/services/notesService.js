@@ -8,7 +8,7 @@ function _saveNoteFiles () {
     saveState('noteFiles', AppState.noteFiles)
 }
 
-function _loadNoteFiles() {
+function loadNoteFiles() {
     const noteFilesFromLocalStorage = loadState('noteFiles', [NoteFile])
     AppState.noteFiles = noteFilesFromLocalStorage
 }

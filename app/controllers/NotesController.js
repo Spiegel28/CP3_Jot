@@ -33,8 +33,7 @@ export class NotesController {
     constructor() {
         console.log('Notes loaded')
 
-        // notesService.loadNotesFromLocalStorage() this will be used later. added for now
-
+        notesService.LoadNoteFiles()
         _drawNotes()
 
         AppState.on('noteFiles', _drawNotes)
